@@ -12,13 +12,15 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView showTick120, showTick119, showTick118, showTick117, showTick116, showTick115, showTick1Bulls, team1Score;
+    TextView showTick120, showTick119, showTick118, showTick117, showTick116, showTick115, showTick1Bulls, team1Score, team2Score;
     int giCounter120, giCounter119, giCounter118, giCounter117, giCounter116, giCounter115, giCounter1Bulls = 0;
-    
+
     TextView showTick220, showTick219, showTick218, showTick217, showTick216, showTick215, showTick2Bulls;
     int giCounter220, giCounter219, giCounter218, giCounter217, giCounter216, giCounter215, giCounter2Bulls = 0;
 
     List<Integer> gaHistory = new ArrayList<>();
+    List<Integer> gaTeam1Score = new ArrayList<>();
+    List<Integer> gaTeam2Score = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         showTick116 = (TextView) findViewById(R.id.tick116);
         showTick115 = (TextView) findViewById(R.id.tick115);
         showTick1Bulls = (TextView) findViewById(R.id.tick1Bulls);
+        team1Score = (TextView) findViewById(R.id.team1Score);
 
         // TEAM 2
         showTick220 = (TextView) findViewById(R.id.tick220);
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         showTick216 = (TextView) findViewById(R.id.tick216);
         showTick215 = (TextView) findViewById(R.id.tick215);
         showTick2Bulls = (TextView) findViewById(R.id.tick2Bulls);
+        team2Score = (TextView) findViewById(R.id.team2Score);
     }
 
 
@@ -310,6 +314,10 @@ public class MainActivity extends AppCompatActivity {
             } else if (giCounter120 == 3) {
                 showTick120.setText("O");
             }
+            else if (giCounter120 > 3 && giCounter220 < 3)
+            {
+                sumTeam1Scores(20);
+            }
         }
 
         if (piButtonID == 2131230811) {
@@ -324,8 +332,11 @@ public class MainActivity extends AppCompatActivity {
             } else if (giCounter119 == 3) {
                 showTick119.setText("O");
             }
+            else if (giCounter119 > 3 && giCounter219 < 3)
+            {
+                sumTeam1Scores(19);
+            }
         }
-
 
         if (piButtonID == 2131230810) {
             giCounter118++;
@@ -338,6 +349,10 @@ public class MainActivity extends AppCompatActivity {
                 showTick118.setText("X");
             } else if (giCounter118 == 3) {
                 showTick118.setText("O");
+            }
+            else if (giCounter118 > 3 && giCounter218 < 3)
+            {
+                sumTeam1Scores(18);
             }
         }
 
@@ -353,6 +368,10 @@ public class MainActivity extends AppCompatActivity {
             } else if (giCounter117 == 3) {
                 showTick117.setText("O");
             }
+            else if (giCounter117 > 3 && giCounter217 < 3)
+            {
+                sumTeam1Scores(17);
+            }
         }
 
         if (piButtonID == 2131230808) {
@@ -366,6 +385,10 @@ public class MainActivity extends AppCompatActivity {
                 showTick116.setText("X");
             } else if (giCounter116 == 3) {
                 showTick116.setText("O");
+            }
+            else if (giCounter116 > 3 && giCounter216 < 3)
+            {
+                sumTeam1Scores(16);
             }
         }
 
@@ -381,6 +404,10 @@ public class MainActivity extends AppCompatActivity {
             } else if (giCounter115 == 3) {
                 showTick115.setText("O");
             }
+            else if (giCounter115 > 3 && giCounter215 < 3)
+            {
+                sumTeam1Scores(15);
+            }
         }
 
         if (piButtonID == 2131230813) {
@@ -394,6 +421,10 @@ public class MainActivity extends AppCompatActivity {
                 showTick1Bulls.setText("X");
             } else if (giCounter1Bulls == 3) {
                 showTick1Bulls.setText("O");
+            }
+            else if (giCounter1Bulls > 3 && giCounter2Bulls < 3)
+            {
+                sumTeam1Scores(25);
             }
         }
 
@@ -410,6 +441,10 @@ public class MainActivity extends AppCompatActivity {
             } else if (giCounter220 == 3) {
                 showTick220.setText("O");
             }
+            else if (giCounter220 > 3 && giCounter120 < 3)
+            {
+                sumTeam2Scores(20);
+            }
         }
 
         if (piButtonID == 2131230818) {
@@ -423,6 +458,10 @@ public class MainActivity extends AppCompatActivity {
                 showTick219.setText("X");
             } else if (giCounter219 == 3) {
                 showTick219.setText("O");
+            }
+            else if (giCounter219 > 3 && giCounter119 < 3)
+            {
+                sumTeam2Scores(19);
             }
         }
 
@@ -438,6 +477,10 @@ public class MainActivity extends AppCompatActivity {
             } else if (giCounter218 == 3) {
                 showTick218.setText("O");
             }
+            else if (giCounter218 > 3 && giCounter118 < 3)
+            {
+                sumTeam2Scores(18);
+            }
         }
 
         if (piButtonID == 2131230816) {
@@ -451,6 +494,10 @@ public class MainActivity extends AppCompatActivity {
                 showTick217.setText("X");
             } else if (giCounter217 == 3) {
                 showTick217.setText("O");
+            }
+            else if (giCounter217 > 3 && giCounter117 < 3)
+            {
+                sumTeam2Scores(17);
             }
         }
 
@@ -466,6 +513,10 @@ public class MainActivity extends AppCompatActivity {
             } else if (giCounter216 == 3) {
                 showTick216.setText("O");
             }
+            else if (giCounter216 > 3 && giCounter116 < 3)
+            {
+                sumTeam2Scores(16);
+            }
         }
 
         if (piButtonID == 2131230814) {
@@ -479,7 +530,10 @@ public class MainActivity extends AppCompatActivity {
                 showTick215.setText("X");
             } else if (giCounter215 == 3) {
                 showTick215.setText("O");
-
+            }
+            else if (giCounter215 > 3 && giCounter115 < 3)
+            {
+                sumTeam2Scores(15);
             }
         }
 
@@ -495,6 +549,42 @@ public class MainActivity extends AppCompatActivity {
             } else if (giCounter2Bulls == 3) {
                 showTick2Bulls.setText("O");
             }
+            else if (giCounter2Bulls > 3 && giCounter1Bulls < 3)
+            {
+                sumTeam2Scores(25);
+            }
         }
+    }
+
+    public void sumTeam1Scores(int piScore)
+    {
+        int iTotalScore = 0;
+
+        gaTeam1Score.add(piScore);
+
+        for (int i = 0; i < gaTeam1Score.size(); i++)
+        {
+            iTotalScore += gaTeam1Score.get(i);
+        }
+
+        System.out.println(gaTeam1Score);
+        System.out.println(iTotalScore);
+        team1Score.setText(Integer.toString(iTotalScore));
+    }
+
+    public void sumTeam2Scores(int piScore)
+    {
+        int iTotalScore = 0;
+
+        gaTeam2Score.add(piScore);
+
+        for (int i = 0; i < gaTeam2Score.size(); i++)
+        {
+            iTotalScore += gaTeam2Score.get(i);
+        }
+
+        System.out.println(gaTeam2Score);
+        System.out.println(iTotalScore);
+        team2Score.setText(Integer.toString(iTotalScore));
     }
 }
